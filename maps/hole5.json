@@ -28,8 +28,8 @@
                  "type":"",
                  "visible":true,
                  "width":32,
-                 "x":54.6929999999999,
-                 "y":694.1115
+                 "x":56.6929999999999,
+                 "y":870.1115
                 }, 
                 {
                  "gid":3,
@@ -45,15 +45,15 @@
                 }, 
                 {
                  "ellipse":true,
-                 "height":271.73,
+                 "height":169.73,
                  "id":27,
                  "name":"",
                  "rotation":0,
                  "type":"",
                  "visible":true,
-                 "width":271.73,
-                 "x":2.71999999999991,
-                 "y":9.54549999999995
+                 "width":169.73,
+                 "x":44.7199999999999,
+                 "y":51.5454999999999
                 }, 
                 {
                  "gid":4,
@@ -69,15 +69,15 @@
                 }, 
                 {
                  "ellipse":true,
-                 "height":207.227,
+                 "height":143.227,
                  "id":31,
                  "name":"",
                  "rotation":0,
                  "type":"",
                  "visible":true,
-                 "width":207.227,
-                 "x":217.445,
-                 "y":200.3065
+                 "width":151.227,
+                 "x":245.445,
+                 "y":232.3065
                 }, 
                 {
                  "gid":4,
@@ -117,27 +117,75 @@
                 }, 
                 {
                  "ellipse":true,
-                 "height":207.227,
+                 "height":152.917775444993,
                  "id":35,
                  "name":"",
                  "rotation":0,
                  "type":"",
                  "visible":true,
-                 "width":207.227,
-                 "x":384.3865,
-                 "y":336.3865
+                 "width":161.227,
+                 "x":410.3865,
+                 "y":366.3865
                 }, 
                 {
                  "ellipse":true,
-                 "height":271.73,
+                 "height":186.269161411448,
                  "id":36,
                  "name":"",
                  "rotation":0,
                  "type":"",
                  "visible":true,
-                 "width":271.73,
-                 "x":568.135,
-                 "y":440.135
+                 "width":193.73,
+                 "x":600.135,
+                 "y":476.135
+                }, 
+                {
+                 "gid":4,
+                 "height":32,
+                 "id":37,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":32,
+                 "x":788,
+                 "y":1018
+                }, 
+                {
+                 "gid":4,
+                 "height":32,
+                 "id":38,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":32,
+                 "x":1268,
+                 "y":572
+                }, 
+                {
+                 "gid":4,
+                 "height":32,
+                 "id":39,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":32,
+                 "x":574,
+                 "y":1014
+                }, 
+                {
+                 "gid":4,
+                 "height":32,
+                 "id":40,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":32,
+                 "x":1042,
+                 "y":1012
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -146,7 +194,7 @@
          "y":0
         }],
  "nextlayerid":3,
- "nextobjectid":37,
+ "nextobjectid":41,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.7.2",
@@ -155,7 +203,7 @@
         {
          "columns":4,
          "firstgid":1,
-         "image":"tileset.png",
+         "image":"..\/..\/regem-ludos\/iframes\/orbital-golfing\/maps\/tileset.png",
          "imageheight":128,
          "imagewidth":128,
          "margin":0,

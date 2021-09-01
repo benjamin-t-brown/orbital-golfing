@@ -238,6 +238,7 @@ const renderSummary = () => {
     setUiState({
       activePane: 'menu',
     });
+    renderUi();
   };
 };
 

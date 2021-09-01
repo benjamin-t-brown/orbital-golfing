@@ -7,7 +7,7 @@ const app = express();
 const server = require('http').Server(app);
 const io = require('socket.io')(server);
 
-const publicOrDist = process.argv[2] === 'dist' ? 'dist' : 'public';
+const publicOrDist = process.argv[2] === 'public' ? 'public' : 'dist';
 
 const code = fs.readFileSync(`./${publicOrDist}/server.js`, 'utf8');
 const shared = fs.existsSync(`./${publicOrDist}/shared.js`)

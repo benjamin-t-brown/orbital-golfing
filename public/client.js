@@ -1256,6 +1256,7 @@ const renderSummary = () => {
         setUiState({
             activePane: 'menu',
         });
+        renderUi();
     };
 };
 const renderUi = () => {

@@ -246,14 +246,16 @@ const gameLoadRound = (game: Game, round: number) => {
       game.players
         .map(id => getShared().getEntity(game, id))
         .forEach((p: PlayerEntity, i) => {
-          p.x = hole.start[0] + i * p.r * 4;
-          p.y = hole.start[1];
-          p.active = false;
-          p.finished = false;
-          p.angle = 0;
-          p.posHistory = [[p.x, p.y]];
-          p.posHistoryI = 0;
-          p.shotCt = 0;
+          if (!p.disconnected) {
+            p.x = hole.start[0] + i * p.r * 4;
+            p.y = hole.start[1];
+            p.active = false;
+            p.finished = false;
+            p.angle = 0;
+            p.posHistory = [[p.x, p.y]];
+            p.posHistoryI = 0;
+            p.shotCt = 0;
+          }
         });
     } else {
       throw new Error(

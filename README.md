@@ -2,11 +2,11 @@
 
 The game is deployed [here](https://orbital-golfing.herokuapp.com/).
 
-This is a multiplayer golfing game where the obstacles are planets and gravity instead of hills and sandtraps.  Shoot your player into the target while compensating for the gravitational pull of the planets in your way.  In some holes, coins can be found that stop your momentum and reduce your shot count.
+This is a multiplayer golfing game where the obstacles are planets and gravity instead of hills and sand traps.  Shoot your player into the target while compensating for the gravitational pull of the planets in your way.  In some holes, coins can be found that stop your momentum and reduce your shot count.
 
 Works on Desktop and Mobile.
 
-This project was programmed with Typescript, along with the open source map editor Tiled to plot out the course.  Yarn has been swapped out for npm calls in this repo, but the npm commands will still work fine.
+This project was programmed with Typescript, along with the open source map editor Tiled to plot out the course.  Yarn has been swapped out for npm calls in this repo, but the npm commands will still work fine.  Special mention to the [ZzFX sound library](https://github.com/KilledByAPixel/ZzFX) for making it possible to add sounds to the game.
 
 The original README for this entry is down below.
 

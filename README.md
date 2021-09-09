@@ -1,5 +1,7 @@
 # Orbital Golfing
 
+Entry for the 2021 https://js13kgames.com/ competition, Server category.  Theme is SPACE.
+
 The game is deployed [here](https://orbital-golfing.herokuapp.com/).
 
 This is a multiplayer golfing game where the obstacles are planets and gravity instead of hills and sand traps.  Shoot your player into the target while compensating for the gravitational pull of the planets in your way.  In some holes, coins can be found that stop your momentum and reduce your shot count.

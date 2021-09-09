@@ -122,7 +122,7 @@ const connectSocket = () => {
       const gameData = getGameData();
       if (gameData) {
         gameData.scorecard = payload.game.scorecard;
-        const myEntity = getMyPlayerEntity(gameData);
+        getAngleLabel().innerHTML = 'Angle ' + 0;
         setUiState({
           entityActive: false,
           roundCompleted: true,

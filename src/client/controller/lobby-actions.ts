@@ -46,8 +46,14 @@ const joinLobby = async (lobbyId: string, playerName: string) => {
       activePane: 'lobby',
       lobbyId: lobby.id,
     });
+    renderUi();
+  } else {
+    showErrorMessage('Lobby full.');
+    setTimeout(() => {
+      setUiState({ activePane: 'menu' });
+      renderUi();
+    }, 2000);
   }
-  renderUi();
 };
 
 const leaveLobby = async () => {

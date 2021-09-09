@@ -31,22 +31,22 @@ var courseStorage = [{
                 "par": 2,
                 "planets": [
                     {
-                        "x": -808559440000,
-                        "y": 831879900000,
+                        "x": -808558080000,
+                        "y": 831879720000,
                         "r": 265290670000,
                         "mass": 3.8829152206245384e+31
                     },
                     {
-                        "x": 61226940000,
-                        "y": -181299050000,
-                        "r": 550787740000,
-                        "mass": 1.715166577996147e+32
+                        "x": 61228290000,
+                        "y": -181301240000,
+                        "r": 550787310000,
+                        "mass": 1.715163962187223e+32
                     }
                 ],
                 "flags": [
                     {
-                        "x": -612489380000,
-                        "y": -1204133990000
+                        "x": -612490330000,
+                        "y": -1204132390000
                     }
                 ],
                 "coins": [
@@ -60,8 +60,8 @@ var courseStorage = [{
                     }
                 ],
                 "start": [
-                    943507980000,
-                    1174162040000
+                    501805280000,
+                    1189713490000
                 ]
             },
             {
@@ -395,14 +395,16 @@ const gameLoadRound = (game, round) => {
             game.players
                 .map(id => getShared().getEntity(game, id))
                 .forEach((p, i) => {
-                p.x = hole.start[0] + i * p.r * 4;
-                p.y = hole.start[1];
-                p.active = false;
-                p.finished = false;
-                p.angle = 0;
-                p.posHistory = [[p.x, p.y]];
-                p.posHistoryI = 0;
-                p.shotCt = 0;
+                if (!p.disconnected) {
+                    p.x = hole.start[0] + i * p.r * 4;
+                    p.y = hole.start[1];
+                    p.active = false;
+                    p.finished = false;
+                    p.angle = 0;
+                    p.posHistory = [[p.x, p.y]];
+                    p.posHistoryI = 0;
+                    p.shotCt = 0;
+                }
             });
         }
         else {
@@ -746,6 +748,9 @@ const lobbyJoin = (lobby, player) => {
         const plStr = playerToString(player);
         throw new Error(`Cannot join lobby. ${plStr} is in another lobby.`);
     }
+    if (lobby.playerIds.length >= 4) {
+        throw new Error(`Lobby full.`);
+    }
     lobby.playerIds.push(player.id);
     player.lobbyId = lobby.id;
     console.debug(`Lobby join '${lobbyToString(lobby)}', ${playerToString(player)}`);
@@ -873,7 +878,6 @@ registerIoRequest('disconnect', meta => {
             if (game) {
                 gameDisconnectPlayer(game, player);
                 if (!gameHasConnectedPlayers(game)) {
-                    console.log('game should be destroyed');
                     gameDestroy(game);
                 }
             }

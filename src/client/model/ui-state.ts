@@ -7,11 +7,9 @@ interface UIState {
   roundCompleted: boolean;
 }
 
-const STORAGE_NAME_KEY = 'js13k2020_orbital_golfing_name';
-
 const uiState: UIState = {
   lobbies: [],
-  name: localStorage.getItem(STORAGE_NAME_KEY) || 'Player',
+  name: 'Player',
   activePane: 'loading',
   lobbyId: '',
   entityActive: false,

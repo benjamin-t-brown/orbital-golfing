@@ -131,8 +131,15 @@ const joinLobby = async (lobbyId, playerName) => {
             activePane: 'lobby',
             lobbyId: lobby.id,
         });
+        renderUi();
     }
-    renderUi();
+    else {
+        showErrorMessage('Lobby full.');
+        setTimeout(() => {
+            setUiState({ activePane: 'menu' });
+            renderUi();
+        }, 2000);
+    }
 };
 const leaveLobby = async () => {
     showLoading();
@@ -272,7 +279,7 @@ const connectSocket = () => {
         const gameData = getGameData();
         if (gameData) {
             gameData.scorecard = payload.game.scorecard;
-            const myEntity = getMyPlayerEntity(gameData);
+            getAngleLabel().innerHTML = 'Angle ' + 0;
             setUiState({
                 entityActive: false,
                 roundCompleted: true,
@@ -767,10 +774,9 @@ const isPlayerMe = (player) => {
 const isPlayerEntityMe = (player) => {
     return player.id === getPlayerId();
 };
-const STORAGE_NAME_KEY = 'js13k2020_orbital_golfing_name';
 const uiState = {
     lobbies: [],
-    name: localStorage.getItem(STORAGE_NAME_KEY) || 'Player',
+    name: 'Player',
     activePane: 'loading',
     lobbyId: '',
     entityActive: false,

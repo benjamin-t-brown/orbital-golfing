@@ -71,8 +71,8 @@ const lobbyJoin = (lobby: Lobby, player: Player) => {
     const plStr = playerToString(player);
     throw new Error(`Cannot join lobby. ${plStr} is in another lobby.`);
   }
-  if (lobby.playerIds.length >= 4) {
-    throw new Error(`Lobby full.`);
+  if (lobby.playerIds.length >= 8) {
+    throw new Error(`Lobby full. ${lobby.playerIds}/8`);
   }
   lobby.playerIds.push(player.id);
   player.lobbyId = lobby.id;

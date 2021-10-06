@@ -26,6 +26,7 @@ const getColor = (color: string, dark?: boolean): string => {
         red: '#fbb',
         green: '#bfb',
         purple: '#b52db5',
+        skyblue: 'blue',
       }[color] ?? color
     );
   }

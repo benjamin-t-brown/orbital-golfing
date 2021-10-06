@@ -179,7 +179,7 @@ const gameCreate = (lobbyId: string, playerIds: string[]): Partial<Game> => {
     flags: [],
     coins: [],
     collisions: [],
-    round: 0,
+    round: 2,
     numRounds: course.holes.length,
     roundFinished: false,
     intervalMs: 25,
@@ -200,6 +200,7 @@ const gameCreate = (lobbyId: string, playerIds: string[]): Partial<Game> => {
     'purple',
     'grey',
     'orange',
+    'skyblue',
   ]);
   playerIds.forEach((id, i) => {
     const player = playerGetById(id);
@@ -209,7 +210,7 @@ const gameCreate = (lobbyId: string, playerIds: string[]): Partial<Game> => {
     }
   });
 
-  gameLoadRound(game, 0);
+  gameLoadRound(game, game.round);
 
   broadcastGameStatus(game, getShared().G_S_GAME_STARTED);
   gameBeginSimulationLoop(game);
@@ -243,11 +244,11 @@ const gameLoadRound = (game: Game, round: number) => {
       hole.coins.forEach(c => {
         gameCreateCoin(game, c.x, c.y);
       });
-      game.players
+      shuffle(game.players)
         .map(id => getShared().getEntity(game, id))
         .forEach((p: PlayerEntity, i) => {
           if (!p.disconnected) {
-            p.x = hole.start[0] + i * p.r * 4;
+            p.x = hole.start[0] + i * p.r * 2;
             p.y = hole.start[1];
             p.active = false;
             p.finished = false;
@@ -416,7 +417,7 @@ const gameCreatePlanet = (
 ) => {
   const planet = gameCreateEntity(game, 'planet_' + randomId()) as PlanetEntity;
   planet.type = 'planet';
-  planet.mass = mass;
+  planet.mass = mass * 0.9;
   planet.x = x;
   planet.y = y;
   planet.r = r;

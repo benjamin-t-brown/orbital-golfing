@@ -179,7 +179,7 @@ const gameCreate = (lobbyId: string, playerIds: string[]): Partial<Game> => {
     flags: [],
     coins: [],
     collisions: [],
-    round: 2,
+    round: 0,
     numRounds: course.holes.length,
     roundFinished: false,
     intervalMs: 25,

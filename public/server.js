@@ -327,7 +327,7 @@ const gameCreate = (lobbyId, playerIds) => {
         flags: [],
         coins: [],
         collisions: [],
-        round: 2,
+        round: 0,
         numRounds: course.holes.length,
         roundFinished: false,
         intervalMs: 25,
